@@ -41,7 +41,7 @@
           <li class="list-group-item vote-group-item">
             <%= button_to "/train_options/#{option.id}/vote", class: "vote-item vote-item-tooltip", method: :post,
             title: option.yelp_content do %>
-              Vote for the <%= option.place %> Train <span class="badge"><%= option.vote_count %> votes</span>
+              Vote for the <%= option.place %> Train <span class="badge"><%= pluralize(option.vote_count, "vote") %></span>
             <% end %>
           </li>
         <% end %>
