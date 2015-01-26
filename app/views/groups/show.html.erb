@@ -40,7 +40,8 @@
         <% train.sorted_train_options.each_with_index do |option, index| %>
           <li class="list-group-item vote-group-item">
             <%= button_to "/train_options/#{option.id}/vote", class: "vote-item vote-item-tooltip", method: :post,
-            title: option.yelp_content do %>
+                "data-content" => option.yelp_content, "data-placement" => "top", "data-toggle" => "popover",
+                "data-container" => "body" do %>
               Vote for the <%= option.place %> Train <span class="badge"><%= pluralize(option.vote_count, "vote") %></span>
             <% end %>
           </li>

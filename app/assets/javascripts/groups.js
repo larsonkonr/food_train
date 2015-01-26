@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  $('.vote-item-tooltip').tooltip();
+  $('.vote-item-tooltip').popover({trigger: "hover", html : true});
 });

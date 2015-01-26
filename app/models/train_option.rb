@@ -10,10 +10,10 @@ class TrainOption < ActiveRecord::Base
   end
 
   def yelp_content
-"Rating:  #{yelp_business.rating}
-Phone:    #{yelp_business.phone}
-Address:  #{yelp_business.address}
-Category: #{yelp_business.category}"
+"<p>Rating:  #{yelp_business.rating}</p>
+<p>Phone:    #{yelp_business.phone}</p>
+<p>Address:  #{yelp_business.address}</p>
+<p>Category: #{yelp_business.category}</p>"
   end
 
   def set_yelp_business
