@@ -23,4 +23,9 @@ module AlexFactory
     default_options = {  }
     Vote.create! default_options.merge(options), &(block || proc{})
   end
+
+  def create_yelp_business(options = {}, &block)
+    default_options = { rating: "4", phone: "123-456-7890", address: "12345 fake st", category: "food" }
+    YelpBusiness.create! default_options.merge(options), &(block || proc{})
+  end
 end

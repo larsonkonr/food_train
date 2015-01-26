@@ -28,4 +28,9 @@ class TrainOptionTest < ActiveSupport::TestCase
     assert_equal 5, option.vote_count
   end
 
+  def test_train_option_creates_a_yelp_business
+    train_option = create_train_option
+    assert train_option.yelp_business
+  end
+
 end

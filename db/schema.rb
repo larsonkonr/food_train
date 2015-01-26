@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121001338) do
+ActiveRecord::Schema.define(version: 20150126142157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,5 +69,17 @@ ActiveRecord::Schema.define(version: 20150121001338) do
 
   add_index "votes", ["train_option_id"], name: "index_votes_on_train_option_id", using: :btree
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+
+  create_table "yelp_businesses", force: true do |t|
+    t.integer  "train_option_id"
+    t.string   "rating"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "yelp_businesses", ["train_option_id"], name: "index_yelp_businesses_on_train_option_id", using: :btree
 
 end

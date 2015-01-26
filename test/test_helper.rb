@@ -13,6 +13,7 @@ require "minitest/pride"
 require_relative "alex_factory"
 
 OmniAuth.config.test_mode = true
+YelpReader.test_mode = true
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
