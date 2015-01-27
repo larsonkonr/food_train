@@ -43,7 +43,7 @@
                 "data-content" => option.yelp_content, "data-placement" => "top", "data-toggle" => "popover",
                 "data-container" => "body" do %>
               Vote for the <%= option.place %> Train <span class="badge"><%= pluralize(option.vote_count, "vote") %></span>
-              <% if current_user && option.votes.map(&:user_id).include? current_user.id %>
+              <% if current_user && option.votes.map(&:user_id).include?(current_user.id) %>
                 <span style="float:right;">*</span>
               <% end %>
             <% end %>
