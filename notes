@@ -1,26 +1,10 @@
 later: Faye to sub/pub to frontend
 
-# Add ability to create groups
-# People can join groups
-# Make new trains
-# Have departure time
-# Only vote once
-# Pull data from service to display the restaurant info (optional)
-# Would only allow you to vote if your are registered
-Invite people to join your group via email / text message (optional)
-ON VPS RUNNING
-ON VPS RUNNING
-ON VPS RUNNING
-ON VPS RUNNING
-
-owner to leave group
 what did I vote for on the side.
 NEEDS TIME FOR CREATING TRAINS - kick back if it didnt work
 
 Alex - FoodTrain
 
 If you are not allowed to vote, don’t show voting button
-Indicate the one that you voted for
-Indicate optional fields from mandatory ones, show validations and flash messages
 Don’t show train if train has already left, show them in past trains
 Invite people to join your group via email / text message (optional)

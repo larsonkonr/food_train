@@ -13,6 +13,18 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
+  def destroy
+    group = Group.find_by(id: params[:id])
+    if group.nil?
+      redirect_to :back, notice: "Group doesn't exist"
+    elsif group.owner == current_user
+      group.delete
+      redirect_to dashboard_path, notice: "Group deleted"
+    else
+      redirect_to :back, notice: "You cant do that"
+    end
+  end
+
   def create
     @group = Group.new group_params.merge(owner: current_user)
     if @group.save

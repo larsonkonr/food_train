@@ -1,16 +1,24 @@
 <div class="panel panel-info">
-  <div class="panel-header">
+  <div class="panel-heading">
     <center><h1>Start a train</h1></center>
   </div>
   <div class="panel-body">
+    <% if @train.errors.any? %>
+      <div class="train-errors">
+        <% @train.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
     <div class="col-md-4 col-md-offset-4">
       <%= form_for @train, url: group_trains_path do |f| %>
         <%= f.fields_for :train_options, @train_options do |ff| %>
           <h4>Option <%= ff.options[:child_index] + 1 %></h4>
           <%= ff.text_field :place %>
         <% end %>
-        <input type="time" name="train[departure_time]" value="">
-        <%= f.submit "Start the train", class: "btn btn-default" %>
+        <h4>Departure Time</h4>
+        <input type="time" name="train[departure_time]" value=""><br>
+        <%= f.submit "Start the train", class: "btn btn-default", style: "margin-top:20px;" %>
       <% end %>
     </div>
   </div>

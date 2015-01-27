@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
 
-  resources :groups, only: [:show, :index, :new, :create] do
+  resources :groups, only: [:show, :index, :new, :create, :destroy] do
     resources :trains, only: [:create, :new]
   end
   post '/groups/:id/join', to: 'groups#join'

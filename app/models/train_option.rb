@@ -17,7 +17,8 @@ class TrainOption < ActiveRecord::Base
   end
 
   def set_yelp_business
-    self.yelp_business = YelpReader.create(train_option: self)
+    # self.yelp_business = YelpReader.create(train_option: self)
+    self.yelp_business = YelpBusiness.create(train_option_id: id, rating: 8)
     true
   end
 end
